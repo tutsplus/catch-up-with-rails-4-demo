@@ -1,0 +1,17 @@
+<h1>Contact Us</h1>
+
+<%= form_for @contact do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+
+  <%= f.label :subject %>
+  <%= f.text_field :subject %>
+
+  <%= f.label :message %>
+  <%= f.text_area :message, rows: 5, cols: 60 %>
+
+  <%= f.submit 'Send Inquiry' %>
+<% end %>
