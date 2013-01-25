@@ -1,0 +1,12 @@
+<h1>Comments for “<%= @comments.first.commentable.title %>”</h1>
+
+<% @comments.each do |comment| %>
+  <blockquote>
+    <%= simple_format comment.body %>
+    <small><%= comment.name %>, at <%= comment.created_at.to_s :short %></small>
+  </blockquote>
+<% end %>
+
+<% unless @comments.any? %>
+  There are no comments.
+<% end %>

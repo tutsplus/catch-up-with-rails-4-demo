@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RailsDemo</title>
+  <title>Catch up with Rails 4</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -9,6 +9,18 @@
 <body>
 
   <div class="container">
+<<<<<<< HEAD
+=======
+    <div class="navbar navbar-inverse">
+      <div class="navbar-inner">
+        <%= link_to raw("Catch up with Rails 4"), root_path, class: "brand" %>
+        <ul class="nav">
+          <li><%= link_to "Posts", posts_path %></li>
+          <li><%= link_to "Images", images_path %></li>
+        </ul>
+      </div>
+    </div>
+>>>>>>> 5787bd2... Add comments.
     <%= content_tag :div, notice, style: "color: #3a3; margin-top: 1em" if notice %>
     <%= content_tag :div, alert , style: "color: #a33; margin-top: 1em" if alert  %>
 
