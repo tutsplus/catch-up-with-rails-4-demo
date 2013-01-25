@@ -1,4 +1,6 @@
 RailsDemo::Application.routes.draw do
+  resources :comments
+
   get "home/index"
   get "home/about"
   resources :posts
