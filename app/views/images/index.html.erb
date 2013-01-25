@@ -1,0 +1,19 @@
+<h1>Listing images</h1>
+
+<ul class="thumbnails">
+  <% @images.each do |image| %>
+    <li class="span4">
+      <a href="<%= image_path image %>" class="thumbnail">
+        <%= image_tag image.url %>
+      </a>
+      <h3><%= image.title %></h3>
+      <ul>
+        <li><%= link_to 'Comments', image_comments_path(image) %></li>
+        <li><%= link_to 'Edit', edit_image_path(image) %></li>
+        <li><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      </ul>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'New Image', new_image_path, class: "btn" %>
