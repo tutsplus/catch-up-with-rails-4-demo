@@ -18,6 +18,7 @@
       <td><%= post.category.name if post.category.present? %></td>
       <td></td>
       <td>
+        <%= link_to 'Comments', post_comments_path(post) %>
         <%= link_to 'Edit', edit_post_path(post) %> 
         <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
       </td>
