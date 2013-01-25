@@ -1,6 +1,11 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @commentable = find_commentable
+    @comments = @commentable.comments
+  end
+
   # POST /comments
   # POST /comments.json
   def create

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RailsDemo</title>
+  <title>Catch up with Rails 4</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -11,7 +11,7 @@
   <div class="container">
     <div class="navbar navbar-inverse">
       <div class="navbar-inner">
-        <%= link_to "Rails 4 demonstration", root_path, class: "brand" %>
+        <%= link_to raw("Catch up with Rails 4"), root_path, class: "brand" %>
         <ul class="nav">
           <li><%= link_to "Posts", posts_path %></li>
           <li><%= link_to "Images", images_path %></li>

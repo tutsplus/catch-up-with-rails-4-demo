@@ -1,33 +1,12 @@
-<h1>Listing comments</h1>
+<h1>Comments for “<%= @comments.first.commentable.title %>”</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Body</th>
-      <th>Commentable</th>
-      <th>Commentable type</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<% @comments.each do |comment| %>
+  <blockquote>
+    <%= simple_format comment.body %>
+    <small><%= comment.name %>, at <%= comment.created_at.to_s :short %></small>
+  </blockquote>
+<% end %>
 
-  <tbody>
-    <% @comments.each do |comment| %>
-    <tr>
-      <td><%= comment.name %></td>
-      <td><%= comment.body %></td>
-      <td><%= comment.commentable_id %></td>
-      <td><%= comment.commentable_type %></td>
-      <td><%= link_to 'Show', comment %></td>
-      <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-      <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br />
-
-<%= link_to 'New Comment', new_comment_path %>
+<% unless @comments.any? %>
+  There are no comments.
+<% end %>

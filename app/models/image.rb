@@ -1,3 +1,7 @@
 class Image < ActiveRecord::Base
-  has_many :comments, as: :commentable
+  include Commentable
+
+  def designation
+    name
+  end
 end
