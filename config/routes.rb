@@ -1,11 +1,14 @@
 RailsDemo::Application.routes.draw do
-  resources :images
+  resources :images do
+    resources :comments
+  end
 
-  resources :comments
 
   get "home/index"
   get "home/about"
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   resources :contacts, only: [ :new, :create ]
   resources :stream, only: [ :index ]
 
