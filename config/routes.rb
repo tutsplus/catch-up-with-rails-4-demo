@@ -1,4 +1,6 @@
 RailsDemo::Application.routes.draw do
+  resources :images
+
   resources :comments
 
   get "home/index"
