@@ -8,6 +8,7 @@
       </a>
       <h3><%= image.title %></h3>
       <ul>
+        <li><%= link_to 'Comments', image_comments_path(image) %></li>
         <li><%= link_to 'Edit', edit_image_path(image) %></li>
         <li><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></li>
       </ul>
