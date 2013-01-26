@@ -5,6 +5,7 @@ gem 'arel',      github: 'rails/arel'
 gem 'activerecord-deprecated_finders', github: 'rails/activerecord-deprecated_finders'
 
 gem 'sqlite3'
+gem 'pg'
 gem 'awesome_print'
 
 # Gems used only for assets and not required

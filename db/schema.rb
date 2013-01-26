@@ -45,10 +45,4 @@ ActiveRecord::Schema.define(version: 20130125172407) do
 
   add_index "posts", ["category_id"], name: "index_posts_on_category_id"
 
-  create_table "tags", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end
