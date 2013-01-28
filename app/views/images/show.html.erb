@@ -5,6 +5,13 @@
   </p>
 </div>
 
+<dl>
+  <% @image.meta.each do |key,value| %>
+    <dt><%= key.humanize %></dt>
+    <dd><%= value %></dd>
+  <% end %>
+</dl>
+
 <hr/>
 
 <p>
