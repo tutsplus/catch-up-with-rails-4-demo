@@ -5,12 +5,16 @@
   </p>
 </div>
 
-<dl>
-  <% @image.meta.each do |key,value| %>
-    <dt><%= key.humanize %></dt>
-    <dd><%= value %></dd>
-  <% end %>
-</dl>
+<% unless @image.meta.nil? %>
+  <h3>Meta information</h3>
+
+  <dl class="dl-horizontal">
+    <% @image.meta.each do |key, value| %>
+      <dt><%= key.humanize %></dt>
+      <dd><%= value %></dd>
+    <% end %>
+  </dl>
+<% end %>
 
 <hr/>
 

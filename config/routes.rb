@@ -1,14 +1,17 @@
 RailsDemo::Application.routes.draw do
-  resources :images do
+  concern :commentable do
     resources :comments
   end
 
+  concern :previewable do
+    get "preview", on: :member
+  end
+
+  resources :images, concerns: [ :commentable, :previewable ]
+  resources :posts , concerns: :commentable
 
   get "home/index"
   get "home/about"
-  resources :posts do
-    resources :comments
-  end
   resources :contacts, only: [ :new, :create ]
   resources :stream, only: [ :index ]
 
