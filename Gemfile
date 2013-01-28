@@ -7,6 +7,10 @@ gem 'activerecord-deprecated_finders', github: 'rails/activerecord-deprecated_fi
 gem 'sqlite3'
 gem 'awesome_print'
 
+group :development, :test do
+  gem "debugger-pry"
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

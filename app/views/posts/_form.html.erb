@@ -22,10 +22,10 @@
   <div class="field">
     <%= f.label :category_id, "Category" %>
     <%= f.collection_radio_buttons :category_id, Category.all, :id, :name do |b| %>
-      <%- b.label { b.radio_button + " " + b.text } %>
+      <%= b.label(:"data-value" => b.value) { b.radio_button + " " + b.text } %>
     <% end %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary"%>
   </div>
 <% end %>

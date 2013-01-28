@@ -15,7 +15,7 @@
     <tr>
       <td><%= link_to post.title, post %></td>
       <td><%= post.body %></td>
-      <td><%= post.category.name %></td>
+      <td><%= post.category.name if post.category.present? %></td>
       <td></td>
       <td>
         <%= link_to 'Edit', edit_post_path(post) %> 

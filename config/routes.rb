@@ -1,4 +1,5 @@
 RailsDemo::Application.routes.draw do
+  resources :categories, only: [ :index, :edit, :update ]
   get "home/index"
   get "home/about"
   resources :posts
