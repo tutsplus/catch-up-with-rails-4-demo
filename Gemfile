@@ -6,6 +6,7 @@ gem 'activerecord-deprecated_finders', github: 'rails/activerecord-deprecated_fi
 
 gem 'sqlite3'
 gem 'awesome_print'
+gem 'puma'
 
 group :development, :test do
   gem "debugger-pry"
