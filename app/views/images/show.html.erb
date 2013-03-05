@@ -1,0 +1,44 @@
+<div style="text-align:center">
+  <h1><%= @image.title %></h1>
+  <p style="color: #999;font-size: .75em">
+    posted at <%= @image.created_at.to_s :short %>.  
+  </p>
+</div>
+
+<% unless @image.meta.nil? %>
+  <h3>Meta information</h3>
+
+  <dl class="dl-horizontal">
+    <% @image.meta.each do |key, value| %>
+      <dt><%= key.humanize %></dt>
+      <dd><%= value %></dd>
+    <% end %>
+  </dl>
+<% end %>
+
+<hr/>
+
+<p>
+  <%= image_tag @image.url  %>
+</p>
+
+<h2>Comments</h2>
+
+<% @image.comments.select(&:persisted?).each do |comment| %>
+  <blockquote>
+    <%= simple_format comment.body %>
+    <small><%= comment.name %>, at <%= comment.created_at.to_s :short %></small>
+  </blockquote>
+<% end %>
+
+<% unless @image.comments.select(&:persisted?).any? %>
+  There are no comments.
+<% end %>
+
+<h3>Post a new comment</h3>
+
+<%= render "comments/form" %>
+
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Back', images_path %>
+

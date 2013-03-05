@@ -12,3 +12,7 @@
  *= require_tree .
  *= require bootstrap
  */
+
+.container {
+  margin-top: 1em
+}

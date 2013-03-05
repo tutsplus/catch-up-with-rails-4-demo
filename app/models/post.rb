@@ -1,8 +1,7 @@
 class Post < ActiveRecord::Base
-  belongs_to :category
-  has_many :comments, as: :commentable
-
   include Commentable
+
+  belongs_to :category
 
   def designation
     title

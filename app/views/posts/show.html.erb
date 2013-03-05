@@ -1,7 +1,7 @@
 <% cache @post do %>
 <div style="text-align:center">
   <h1><%= @post.title %></h1>
-  <p style="color: #900;font-size: .75em">
+  <p style="color: #999;font-size: .75em">
     Posted at <%= @post.created_at.to_s :short %>.  
     Category: <em><%= @post.category.name %></em>
   </p>
@@ -14,12 +14,11 @@
 <h2>Comments</h2>
 
 <% @post.comments.select(&:persisted?).each do |comment| %>
-  <% cache comment do %>
-  <div>
+<% cache comment do %>
+  <blockquote>
     <%= simple_format comment.body %>
     <small><%= comment.name %>, at <%= comment.created_at.to_s :short %></small>
-  </div>
-  <% end %>
+  </blockquote>
 <% end %>
 
 <% unless @post.comments.select(&:persisted?).any? %>
